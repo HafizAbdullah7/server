@@ -3,11 +3,11 @@ const cors = require('cors');
 const ytdl = require('ytdl-core');
 const app = express();
 
-app.use(cors());
+app.use(cors({ methods:["GET","POST","PUT","DELETE","OPTIONS"]}));
 
 app.get('/download', (req, res) => {
   const url = req.query.url;
-  res.setheader("Access-Control-Allow-Origin","https://client-chi-lovat.vercel.app/")
+  res.setheader("Access-Control-Allow-Origin","https://client-chi-lovat.vercel.app/",)
   ytdl(url, { filter: format => format.container === 'mp4' })
     .pipe(res);
 });
