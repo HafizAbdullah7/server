@@ -9,7 +9,7 @@ app.use(cors({
 
 app.get('/download', (req, res) => {
   const url = req.query.url;
-  res.header("Access-Control-Allow-Origin")
+  res.setheader("Access-Control-Allow-Origin")
   ytdl(url, { filter: format => format.container === 'mp4' })
     .pipe(res);
 });
