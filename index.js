@@ -4,7 +4,7 @@ const ytdl = require('ytdl-core');
 const app = express();
 
 app.use(cors({ 
-  origin:["https://client-iota-umber.vercel.app/"],
+  origin:["https://client-iota-umber.vercel.app"],
   methods:["GET","POST","PUT","DELETE","OPTIONS"]}));
 
 app.get('/download', (req, res) => {
