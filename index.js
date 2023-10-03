@@ -4,7 +4,7 @@ const ytdl = require('ytdl-core');
 const app = express();
 
 app.use(cors({ 
-  origin:[""],
+  origin:["https://client-iota-umber.vercel.app"],
   methods:["GET","POST","PUT","DELETE","OPTIONS"]}));
 
 app.get('/download', (req, res) => {
@@ -13,6 +13,7 @@ app.get('/download', (req, res) => {
   ytdl(url, { filter: format => format.container === 'mp4' })
     .pipe(res);
 });
+
 app.get('/', (req, res) => {
   res.send('Hello, this is the YouTube Video Downloader server!');
 });
